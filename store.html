@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>Elite Fight | المتجر</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Tahoma,Arial;
+    background:#000;
+    color:#fff;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+h1,h2{
+    color:#ff3c3c;
+    text-align:center;
+}
+
+.back{
+    display:inline-block;
+    margin-bottom:20px;
+    color:#ff3c3c;
+    text-decoration:none;
+}
+
+/* المنتجات */
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-top:30px;
+}
+
+.product{
+    background:rgba(255,255,255,0.05);
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+}
+
+.product img{
+    width:150px;
+    border-radius:10px;
+}
+
+.price{
+    color:#00ff99;
+    font-size:18px;
+    margin-top:5px;
+}
+
+/* الطلب */
+.order{
+    margin-top:60px;
+    background:rgba(255,255,255,0.05);
+    padding:30px;
+    border-radius:12px;
+}
+
+form input,form textarea,form button{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border:none;
+    border-radius:6px;
+    font-size:15px;
+}
+
+form button{
+    background:#ff3c3c;
+    color:#fff;
+    cursor:pointer;
+}
+
+form button:hover{
+    opacity:0.9;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<a class="back" href="index.html">⬅ الرجوع للرئيسية</a>
+
+<h1>🛒 متجر Elite Fight</h1>
+
+<!-- المنتجات -->
+<div class="products">
+
+    <div class="product">
+        <img src="https://cdn.discordapp.com/attachments/1429135358951559339/1429177964678877385/logo_3.png">
+        <h3>منتج تجريبي</h3>
+        <p class="price">السعر: 1</p>
+        <p>منتج مخصص لسيرفر Elite Fight</p>
+    </div>
+
+</div>
+
+<!-- الطلب -->
+<div class="order">
+    <h2>📦 طلب المنتج</h2>
+
+    <form id="orderForm">
+        <input id="productName" placeholder="اسم المنتج المطلوب" required>
+        <input id="discordUser" placeholder="يوزرك في الدسكورد" required>
+        <input id="accountImage" placeholder="رابط صورة حسابك" required>
+        <textarea id="notes" placeholder="ملاحظات إضافية (اختياري)"></textarea>
+        <button type="submit">إرسال الطلب</button>
+    </form>
+</div>
+
+</div>
+
+<script>
+document.getElementById("orderForm").addEventListener("submit",function(e){
+    e.preventDefault();
+
+    fetch("https://canary.discord.com/api/webhooks/1476575790127906911/jXDxh_wSILDoJXjK4Tbi30imNvRjn6_Ve82HinX97pZmPbdeW9LJu0H_thoyPj-HZJwV",{
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({
+            content:
+            "🛒 **طلب جديد | Elite Fight**\n\n"+
+            "📦 المنتج: "+productName.value+"\n"+
+            "👤 دسكورد: "+discordUser.value+"\n"+
+            "🖼️ صورة الحساب: "+accountImage.value+"\n"+
+            "📝 ملاحظات: "+notes.value
+        })
+    }).then(()=>{
+        alert("تم إرسال الطلب بنجاح ✅");
+        orderForm.reset();
+    }).catch(()=>{
+        alert("حصل خطأ ❌");
+    });
+});
+</script>
+
+</body>
+</html>
