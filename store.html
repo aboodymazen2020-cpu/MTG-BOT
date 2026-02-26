@@ -8,12 +8,19 @@
 body{
     margin:0;
     font-family:Tahoma,Arial;
-    background:#000;
+    background:url("https://cdn.discordapp.com/attachments/1429135358951559339/1429177964678877385/logo_3.png")
+    no-repeat center center fixed;
+    background-size:contain;
     color:#fff;
 }
 
+.overlay{
+    background:rgba(0,0,0,0.75);
+    min-height:100vh;
+}
+
 .container{
-    max-width:900px;
+    max-width:1000px;
     margin:auto;
     padding:40px 20px;
 }
@@ -46,7 +53,7 @@ h1,h2{
 }
 
 .product img{
-    width:150px;
+    width:160px;
     border-radius:10px;
 }
 
@@ -87,6 +94,7 @@ form button:hover{
 
 <body>
 
+<div class="overlay">
 <div class="container">
 
 <a class="back" href="index.html">⬅ الرجوع للرئيسية</a>
@@ -98,9 +106,20 @@ form button:hover{
 
     <div class="product">
         <img src="https://cdn.discordapp.com/attachments/1429135358951559339/1429177964678877385/logo_3.png">
-        <h3>منتج تجريبي</h3>
+        <h3>منتج 1</h3>
         <p class="price">السعر: 1</p>
-        <p>منتج مخصص لسيرفر Elite Fight</p>
+    </div>
+
+    <div class="product">
+        <img src="https://cdn.discordapp.com/attachments/1429135358951559339/1429177964678877385/logo_3.png">
+        <h3>منتج 2</h3>
+        <p class="price">السعر: 1</p>
+    </div>
+
+    <div class="product">
+        <img src="https://cdn.discordapp.com/attachments/1429135358951559339/1429177964678877385/logo_3.png">
+        <h3>منتج 3</h3>
+        <p class="price">السعر: 1</p>
     </div>
 
 </div>
@@ -119,12 +138,13 @@ form button:hover{
 </div>
 
 </div>
+</div>
 
 <script>
 document.getElementById("orderForm").addEventListener("submit",function(e){
     e.preventDefault();
 
-    fetch("https://canary.discord.com/api/webhooks/1476575790127906911/jXDxh_wSILDoJXjK4Tbi30imNvRjn6_Ve82HinX97pZmPbdeW9LJu0H_thoyPj-HZJwV",{
+    fetch("PUT_YOUR_DISCORD_WEBHOOK_HERE",{
         method:"POST",
         headers:{"Content-Type":"application/json"},
         body:JSON.stringify({
