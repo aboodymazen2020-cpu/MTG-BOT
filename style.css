@@ -12,19 +12,22 @@ body {
   color: #fff;
 }
 
+/* طبقة شكل فقط */
 .overlay {
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.75);
+  pointer-events: none; /* ✅ هذا هو الحل */
 }
 
+/* الصندوق */
 .container {
   position: relative;
-  z-index: 1;
+  z-index: 10;
   max-width: 420px;
   margin: 10% auto;
   padding: 30px;
-  background: rgba(20,20,20,0.9);
+  background: rgba(20,20,20,0.95);
   border: 2px solid crimson;
   box-shadow: 0 0 25px crimson;
   text-align: center;
@@ -38,7 +41,7 @@ h1 {
 
 .desc {
   margin-bottom: 20px;
-  color: #aaa;
+  color: #bbb;
 }
 
 input, textarea {
@@ -51,6 +54,12 @@ input, textarea {
   border-radius: 6px;
 }
 
+textarea {
+  min-height: 90px;
+  resize: none;
+}
+
+/* الزر */
 button {
   margin-top: 10px;
   width: 100%;
