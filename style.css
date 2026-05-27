@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@700&display=swap');
+
+* {
+  font-family: 'Tajawal', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: url("https://i.imgur.com/6QJjYMe.jpg") no-repeat center/cover;
+  height: 100vh;
+  color: #fff;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 420px;
+  margin: 10% auto;
+  padding: 30px;
+  background: rgba(20,20,20,0.9);
+  border: 2px solid crimson;
+  box-shadow: 0 0 25px crimson;
+  text-align: center;
+  border-radius: 12px;
+}
+
+h1 {
+  color: crimson;
+  text-shadow: 0 0 15px red;
+}
+
+.desc {
+  margin-bottom: 20px;
+  color: #aaa;
+}
+
+input, textarea {
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  background: #111;
+  border: 1px solid crimson;
+  color: #fff;
+  border-radius: 6px;
+}
+
+button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 12px;
+  background: crimson;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 0 15px red;
+}
+
+button:hover {
+  background: darkred;
+}
+
+.status {
+  margin-top: 10px;
+  font-size: 14px;
+}
