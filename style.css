@@ -7,17 +7,38 @@
 
 body {
   margin: 0;
-  background: url("https://i.imgur.com/6QJjYMe.jpg") no-repeat center/cover;
   height: 100vh;
+  background: radial-gradient(circle at bottom, #300 0%, #000 70%);
+  overflow: hidden;
   color: #fff;
 }
 
-/* طبقة شكل فقط */
+/* 🔥 أنيميشن نار */
+.fire {
+  position: fixed;
+  bottom: -50px;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  background:
+    radial-gradient(circle at 20% 100%, orange, transparent 60%),
+    radial-gradient(circle at 50% 100%, red, transparent 60%),
+    radial-gradient(circle at 80% 100%, yellow, transparent 60%);
+  animation: fireMove 2s infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes fireMove {
+  from { transform: translateY(0); }
+  to { transform: translateY(-40px); }
+}
+
+/* الظلام */
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.75);
-  pointer-events: none; /* ✅ هذا هو الحل */
+  background: rgba(0,0,0,0.7);
+  pointer-events: none;
 }
 
 /* الصندوق */
@@ -25,28 +46,28 @@ body {
   position: relative;
   z-index: 10;
   max-width: 420px;
-  margin: 10% auto;
+  margin: 8% auto;
   padding: 30px;
-  background: rgba(20,20,20,0.95);
+  background: rgba(15,15,15,0.95);
   border: 2px solid crimson;
-  box-shadow: 0 0 25px crimson;
-  text-align: center;
+  box-shadow: 0 0 30px red;
   border-radius: 12px;
+  text-align: center;
 }
 
 h1 {
   color: crimson;
-  text-shadow: 0 0 15px red;
+  text-shadow: 0 0 20px red;
 }
 
 .desc {
-  margin-bottom: 20px;
   color: #bbb;
+  margin-bottom: 15px;
 }
 
 input, textarea {
   width: 100%;
-  margin: 8px 0;
+  margin: 7px 0;
   padding: 10px;
   background: #111;
   border: 1px solid crimson;
@@ -55,25 +76,25 @@ input, textarea {
 }
 
 textarea {
-  min-height: 90px;
   resize: none;
+  min-height: 90px;
 }
 
-/* الزر */
 button {
-  margin-top: 10px;
   width: 100%;
+  margin-top: 10px;
   padding: 12px;
   background: crimson;
   border: none;
-  color: white;
+  color: #fff;
   font-size: 16px;
   cursor: pointer;
   box-shadow: 0 0 15px red;
 }
 
-button:hover {
-  background: darkred;
+button:disabled {
+  background: #400;
+  cursor: not-allowed;
 }
 
 .status {
