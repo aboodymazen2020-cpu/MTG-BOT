@@ -7,18 +7,23 @@
 </head>
 <body>
 
-<!-- طبقة الظلام (شكل فقط) -->
+<!-- نار -->
+<div class="fire"></div>
+
+<!-- ظلام -->
 <div class="overlay"></div>
 
-<!-- المحتوى -->
 <div class="container">
   <h1>🔥 بو قحط 🔥</h1>
-  <p class="desc">• رسائل نشر الشات العام الخاص بي ابو قحط</p>
+  <p class="desc">منطقة حرب • إرسال رسائل ديسكورد</p>
+
+  <!-- كلمة المرور -->
+  <input id="password" type="password" placeholder="كلمة المرور">
 
   <input id="title" type="text" placeholder="عنوان الرسالة">
   <textarea id="message" placeholder="اكتب الرسالة هنا..."></textarea>
 
-  <button onclick="send()">إرسال إلى الديسكورد</button>
+  <button id="sendBtn" onclick="send()">إرسال إلى الديسكورد</button>
 
   <p class="status" id="status"></p>
 </div>
