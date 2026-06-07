@@ -1,21 +1,25 @@
-body {
-  background: #05010a;
-  color: #00ffff;
-  font-family: Orbitron, sans-serif;
-  text-align: center;
-}
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>MTG ADMIN</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="glitch.css">
+</head>
+<body>
 
-input, textarea, select {
-  background: black;
-  color: #0ff;
-  border: 1px solid #0ff;
-  margin: 5px;
-  padding: 10px;
-}
+<h1 class="glitch">MTG ADMIN</h1>
 
-button {
-  background: #0ff;
-  color: black;
-  padding: 10px 20px;
-  cursor: pointer;
-}
+<input id="adminPass" placeholder="كلمة مرور الأدمن">
+<button onclick="login()">دخول</button>
+
+<div id="panel" style="display:none">
+  <input id="appoint" placeholder="Webhook التعيين">
+  <input id="remove" placeholder="Webhook الإعفاء">
+  <button onclick="save()">💾 حفظ</button>
+  <p id="stats"></p>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
