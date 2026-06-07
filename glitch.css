@@ -1,0 +1,9 @@
+.glitch {
+  animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+  0% { text-shadow: 2px 0 red; }
+  50% { text-shadow: -2px 0 blue; }
+  100% { text-shadow: 2px 0 lime; }
+}
