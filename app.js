@@ -1,5 +1,5 @@
 // 🔴 حط رابط الويب هوك هنا
-const WEBHOOK_URL = "https://canary.discord.com/api/webhooks/1513240622302236815/zNFKsUaXAh9L4Lkvlz_WvY7TG2R3OaRQlV-l1USwIveI1sIcYQpySDK3SMz_i8-AVbfL";
+const WEBHOOK_URL = "https://canary.discord.com/api/webhooks/1509325944328814792/4nkZclRiz4NqPrYZHdTP4wzAqZfVIpqExKArWSLd5mKl802ORawZqUXLbXtHs__4599j";
 
 // زر الإرسال
 function send() {
