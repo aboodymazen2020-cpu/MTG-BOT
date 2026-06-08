@@ -19,9 +19,9 @@ function send() {
     body: JSON.stringify({
       content:
 `**${type}**
-👤 الاسم: ${name}
-🧩 المسؤولية: ${role}
-📝 الرسالة: ${msg}`
+ ***الاسم:*** ${name}
+ ***المسؤولية***: ${role}
+ ***الرسالة***: ${msg}`
     })
   })
   .then(() => alert("✅ تم الإرسال"))
