@@ -1,27 +1,43 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-<meta charset="UTF-8">
-<title>MTG</title>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="glitch.css">
+  <meta charset="UTF-8">
+  <title>MTG PANEL</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1 class="glitch">MTG</h1>
+<div class="container">
 
-<input id="name" placeholder="الاسم">
-<input id="role" placeholder="المسؤولية">
+  <h1 class="glitch" data-text="MTG">MTG</h1>
+  <p class="subtitle">Cyber Control Panel</p>
 
-<select id="type">
-  <option value="تعيين">تعيين</option>
-  <option value="إعفاء">إعفاء</option>
-</select>
+  <div class="card">
 
-<textarea id="msg" placeholder="الرسالة"></textarea>
+    <input id="name" placeholder="الاسم">
+    <input id="job" placeholder="المسؤولية">
 
-<button onclick="send()">إرسال</button>
+    <select id="type">
+      <option value="تعيين">تعيين</option>
+      <option value="إعفاء">إعفاء</option>
+    </select>
 
-<script src="app.js"></script>
+    <select id="mention">
+      <option value="none">❌ بدون منشن</option>
+      <option value="everyone">👥 everyone</option>
+      <option value="role">🎭 رول</option>
+    </select>
+
+    <input id="roleId" placeholder="Role ID (في حال اختيار رول)">
+
+    <textarea id="message" placeholder="اكتب الرسالة هنا"></textarea>
+
+    <button onclick="send()">إرسال</button>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
